@@ -1,0 +1,223 @@
+:root {
+  --clr-1: #f25c00;
+  --clr-2: #ec4559;
+  --clr-3: #bf4686;
+  --clr-4: #41537f;
+  --clr-5: #2f4858;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: basic-sans, sans-serif;
+  font-weight: 300;
+  background: -webkit-gradient(linear, left top, left bottom, from(var(--clr-1)), to(var(--clr-2)));
+  background: linear-gradient(var(--clr-1), var(--clr-2));
+  min-height: 100vh;
+  margin: 0;
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 24px;
+}
+
+p {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+.intro {
+  font-size: 4rem;
+  display: -ms-grid;
+  display: grid;
+  grid: "hello hello" 70vh "my-name-is troy" 200vh / -webkit-max-content 1fr;
+  grid: "hello hello" 70vh "my-name-is troy" 200vh / max-content 1fr;
+  margin-bottom: 70vh;
+  grid-gap: 15px;
+}
+
+.intro-1 {
+  grid-area: hello;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 2em;
+  margin-bottom: 1.5em;
+}
+
+.intro-2 {
+  grid-area: my-name-is;
+  font-weight: 900;
+  font-style: italic;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 3.5em;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.intro-3 {
+  grid-area: troy;
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
+  font-weight: 900;
+  font-style: italic;
+}
+
+.bio {
+  text-align: center;
+  margin-bottom: 60vh;
+}
+
+.projects {
+  display: -ms-grid;
+  display: grid;
+  grid: "text thumbnails" 1fr / 1fr 1fr;
+  grid-gap: 1em;
+  margin: 20px auto;
+  width: 80%;
+}
+
+.project__card {
+  padding: 20px;
+  position: relative;
+}
+
+.project__card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  z-index: 4;
+  opacity: 0;
+  -webkit-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+}
+
+.project__card:hover::before {
+  opacity: 1;
+}
+
+.project__card::after {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  bottom: -3vh;
+  right: 40vw;
+  width: 40vw;
+  height: 30vh;
+  background-color: white;
+  z-index: 2;
+  opacity: 0;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.project__card:hover::after {
+  -webkit-transition: 1s ease-in-out;
+  transition: 1s ease-in-out;
+  opacity: 1;
+}
+
+.caption {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 20vh;
+  grid-area: text;
+  -ms-flex-item-align: start;
+      -ms-grid-row-align: start;
+      align-self: start;
+}
+
+.thumbnails {
+  grid-area: thumbnails;
+  margin-top: 60vh;
+  background: var(--clr-5);
+  padding: 0.3em;
+  position: relative;
+}
+
+.thumbnails::after {
+  content: "";
+  position: absolute;
+  background: -webkit-gradient(linear, left top, left bottom, from(var(--clr-5)), to(transparent));
+  background: linear-gradient(var(--clr-5) calc(100% - 3em), transparent);
+  top: 2.5em;
+  left: 0;
+  right: 0;
+  height: 95%;
+  z-index: 2;
+}
+
+.thumbnails__begin {
+  text-align: center;
+  grid-area: thumbnails;
+  color: white;
+  z-index: 50;
+}
+
+.thumbnails__end {
+  position: -webkit-sticky;
+  position: sticky;
+  text-align: center;
+  bottom: 200px;
+  color: white;
+  font-weight: 900;
+  margin-top: 6em;
+}
+
+.project__thumbnail {
+  position: relative;
+  z-index: 3;
+}
+
+.languages {
+  display: -ms-grid;
+  display: grid;
+  grid: "committed" 60vh "learned" 60vh "carousel" 60vh;
+  grid-gap: 1rem;
+  margin-top: 10em;
+  padding-top: 10em;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(white));
+  background-image: linear-gradient(transparent, white);
+  margin-bottom: 900px;
+}
+
+.languages p {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.committed {
+  grid-area: committed;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 2em;
+  margin-bottom: 75vh;
+}
+
+.learned {
+  grid-area: learned;
+  position: -webkit-sticky;
+  position: sticky;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  top: 4em;
+  margin-bottom: 65vh;
+  color: white;
+}
+/*# sourceMappingURL=style.css.map */
