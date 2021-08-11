@@ -15,11 +15,16 @@
 body {
   font-family: basic-sans, sans-serif;
   font-weight: 300;
-  background: linear-gradient(var(--clr-1), var(--clr-2));
+  background-image: linear-gradient(var(--clr-1), var(--clr-2));
   min-height: 100vh;
   margin: 0;
-  color: rgba(black, 0.7);
+  color: rgba(rgb(0, 0, 0), 0.7);
   font-size: 24px;
+}
+
+.white-bg {
+  background-image: none;
+  background-color: rgb(255, 255, 255);
 }
 
 p {
@@ -30,12 +35,60 @@ img {
   max-width: 100%;
 }
 
+.n-bar {
+
+  --n-text: black;
+  --n-text-inverse: var(--accent);
+  --n-background: transparent;
+  
+  position: fixed;
+  width: 100%;
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  padding-top: 10px;
+ 
+  font-size: 20px;
+  background-color: var(--n-background);
+  
+  text-decoration: none;
+  border-bottom: 3px solid transparent;
+
+}
+
+.n-bar a {
+  color: var(--n-text);
+  margin: 0px 30px;
+  text-decoration: none;
+
+  font-weight: bold;
+  border-bottom: 2px solid transparent;
+  /*transition: .5s;*/
+}
+
+.n-bar a:hover {
+  color: var(--n-text-inverse);
+  border-bottom: 2px solid var(--n-text-inverse);
+  transition: .2s;
+}
+
+.nav-filled {
+  --n-text: white;
+  // --n-text-inverse: var(--secondary);
+  --n-background: var(--clr-5);
+
+  
+  box-shadow: 0 0 2px 5px rgba(136, 135, 135, 0.274),
+  0 0 2px 2px rgba(136, 135, 135, 0.685);
+}
+
 .intro {
   font-size: 4rem;
   display: grid;
   grid:
-    "hello hello" 70vh
-    "my-name-is troy" 200vh / max-content 1fr;
+    "hello hello"70vh "my-name-is troy"200vh / max-content 1fr;
   margin-bottom: 70vh;
   grid-gap: 15px;
 }
@@ -71,50 +124,93 @@ img {
 
 .projects {
   display: grid;
-  grid: "text thumbnails" 1fr / 1fr 1fr;
+  grid: "text thumbnails"1fr / 1fr 1fr;
   grid-gap: 1em;
-  margin: 20px auto;
+  margin: 20px auto 500px auto;
   width: 80%;
 }
 
-.project__card {padding: 20px;
+#project-1,
+#project-2,
+#project-3,
+#project-4,
+#project-5,
+#project-6,
+#project-7,
+#project-8 {
+  padding: 20px;
   position: relative;
-  &::before{
-      content: '';
-      position:absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background-color: white;
-      z-index: 4;
-      opacity: 0;
-      transition: .5s ease-in-out;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    z-index: 4;
+    opacity: 0;
+    transition: .5s ease-in-out;
   }
 
   &:hover::before {
-      opacity: 1;
+    opacity: 1;
   }
-  
+
   &::after {
-      pointer-events: none;
-      content: "";
-      position: absolute;
-      bottom: -3vh;
-      right: 40vw;
-      width: 40vw;
-      height: 30vh;
-      background-color: white;
-      z-index: 2;
-      opacity: 0;
-      transition: .3s;
-    }
-    
-    &:hover::after {
-        transition: 1s ease-in-out;
-      opacity: 1;
-    }
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    top: -5vh;
+    right: 40vw;
+    width: 45vw;
+    height: 40vh;
+    background-color: white;
+    z-index: 2;
+    opacity: 0;
+    transition: .3s;
+    background-size: 100% 100%;
+  }
+
+  &:hover::after {
+    transition: 1s ease-in-out;
+    opacity: 1;
+  }
 }
+
+#project-1::after {
+  background-image: url(../styles/images/pw.PNG);
+  background-size: 100% 100%;
+  
+  
+}
+
+#project-2::after {
+  background-image: url(../styles/images/projects/cal.jpg);
+  
+}
+
+#project-3::after {
+  background-image: url(../styles/images/projects/mms.PNG);
+  
+}
+
+#project-4::after {
+  background-image: url(../styles/images/projects/quiz.PNG);
+  
+}
+
+#project-5::after {
+  background-image: url(../styles/images/projects/wyw.PNG);
+  
+}
+
+#project-6::after {
+  background-image: url(../styles/images/projects/e-a_demo.gif);
+  
+}
+
 .caption {
   position: sticky;
   top: 20vh;
@@ -147,6 +243,7 @@ img {
   color: white;
   z-index: 50;
 }
+
 .thumbnails__end {
   position: sticky;
   text-align: center;
@@ -161,34 +258,82 @@ img {
   z-index: 3;
 }
 
+
+
 .languages {
   display: grid;
-  grid: "committed" 60vh
-  "learned" 60vh
-  "carousel" 60vh;
+  grid: "transition" 50vh "committed" 100vh "learned" 150vh;
   grid-gap: 1rem;
   margin-top: 10em;
   padding-top: 10em;
   background-image: linear-gradient(transparent, white);
-  margin-bottom: 900px;
 
   p {
     text-align: center;
     font-size: 2rem;
   }
 }
-  .committed {
-    grid-area: committed;
-    position: sticky;
-    top: 2em;
-    margin-bottom: 75vh;
-  }
+
+.committed {
+  grid-area: committed;
+  position: sticky;
+  align-self: center;
+  top: 2em;
+  margin-bottom: 2em;
+}
 
 .learned {
   grid-area: learned;
   position: sticky;
   align-self: center;
   top: 4em;
-  margin-bottom: 65vh;
-  color: white;
+}
+
+.icon-container {
+  position: relative;
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+justify-content: space-around;
+padding-bottom: 1em;
+width: 100%;
+background-color: white;
+}
+
+.icon-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  padding: 1em;
+  border-radius: 15px;
+  background-color: rgba(blue, 0.5);
+  box-shadow: inset 0 0 2px 5px rgba(255, 255, 255, 0.2),
+              inset 0 0 10px 10px rgba(255, 255, 255, 0.5);
+
+  img{
+    width: 10vw;
+  }
+}
+
+.icon-container::after {
+  content: '';
+  position: absolute;
+  top: 30vh;
+  left: 0;
+  width: 100%;
+  height: 500%;
+  background-image: linear-gradient(white, blue);
+}
+
+
+
+
+
+
+
+
+
+footer {
+  margin-bottom: 900px;
 }

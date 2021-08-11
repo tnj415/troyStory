@@ -7,35 +7,65 @@
     <link rel="stylesheet" href="main/style.css">
     <title>Document</title>
 </head>
-<body>
+<body class="body">
+
+    <nav class="n-bar ">
+        <a class="menu" href="#about">About</a>
+        <a class="menu" href="#projects">Projects</a>
+        <a class="menu" href="#languages">Languages</a>
+        <a class="menu" id="contact-nav">Contact</a>
+    </nav>
+
     <div class="intro">
         <p class="intro-1">Hello there!</p>
         <p class="intro-2">My name is</p>
         <p class="intro-3">Troy!</p>
     </div>
 
-    <div class="about-me">
+    <section class="about">
         <p class="bio">I connect reliable back-end functionality with a refined user experience.</p>
-        <div class="projects">
+        <article class="projects">
             <p class="caption">This is some of my work:</p>
             <div class="thumbnails">
                 <p class="thumbnails__begin">hover over an image for details</p>
-                <div class="project__card"><img src="/styles/images/butterfly.png" alt="" class="project__thumbnail"></div>
-                <div class="project__card"><img src="/styles/images/butterfly.png" alt="" class="project__thumbnail"></div>
-                <div class="project__card"><img src="/styles/images/butterfly.png" alt="" class="project__thumbnail"></div>
-                <div class="project__card"><img src="/styles/images/butterfly.png" alt="" class="project__thumbnail"></div>
-                <div class="project__card"><img src="/styles/images/butterfly.png" alt="" class="project__thumbnail"></div>
-                <div class="project__card"><img src="/styles/images/butterfly.png" alt="" class="project__thumbnail"></div>
+                <div class="project__card" id="project-1"><img src="/styles/images/butterfly.png" alt="" class="project__thumbnail"></div>
+                <div class="project__card" id="project-2"><img src="/styles/images/butterfly.png" alt="" class="project__thumbnail"></div>
+                <div class="project__card" id="project-3"><img src="/styles/images/butterfly.png" alt="" class="project__thumbnail"></div>
+                <div class="project__card" id="project-4"><img src="/styles/images/butterfly.png" alt="" class="project__thumbnail"></div>
+                <div class="project__card" id="project-5"><img src="/styles/images/butterfly.png" alt="" class="project__thumbnail"></div>
+                <div class="project__card" id="project-6"><img src="/styles/images/butterfly.png" alt="" class="project__thumbnail"></div>
             <p class="thumbnails__end"> I really enjoy what I do!</p>
             </div>
-        </div>
-    </div>
+        </article>
+    </section>
 
-    <div class="languages">
+    <section class="languages">
         <p class="committed">I am very committed,</p>
         <p class="learned">Ive learned many languages:</p>
-        <img src="/styles/images/butterfly.png" alt="" class="carousel">
-    </div>
+    </section>
+
+    <section class="icon-container">
+            <div class="icon-card">
+                <p class="icon-title"></p>
+                <img src="/styles/images/language-icons/html_logo.crop.png" alt="" class="icon">
+            </div>
+            <div class="icon-card">
+                <p class="icon-title"></p>
+                <img src="/styles/images/language-icons/css_logo.crop.png" alt="" class="icon">
+            </div>
+            <div class="icon-card">
+                <p class="icon-title"></p>
+                <img src="/styles/images/language-icons/js_logo.crop.png" alt="" class="icon">
+            </div>
+            <div class="icon-card">
+                <p class="icon-title"></p>
+                <img src="/styles/images/language-icons/nodejs_logo.crop.png" alt="" class="icon">
+            </div>
+    </section>
     
 </body>
+<footer>
+    asd
+</footer>
+<script src="./main/js/script.js"></script>
 </html>
